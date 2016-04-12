@@ -16,49 +16,47 @@ module Pregos {
 			this.bgplacar = this.game.add.sprite(x, y, 'placar');
 			this.bgplacar.anchor.setTo(0.5, 0.5);
 			if(flipped){
-				this.bgplacar.angle = 90;
+				this.bgplacar.angle = 0;
 			} else {
-				this.bgplacar.angle = -90;
+				this.bgplacar.angle = 180;
 			}
 
 
 			this.txtGol = this.game.add.bitmapText(x, y, 'carrier_command', '', 32);
-			this.txtGol.scale.x = 0.3;
-			this.txtGol.scale.y = 0.5;
+			this.txtGol.scale.x = 0.6;
+			this.txtGol.scale.y = 0.8;
 			this.txtGol.anchor.setTo(0.5, 0.5);
-			this.txtGol.alpha = 0.5;
+			this.txtGol.alpha = 1;
 			if(flipped){
-				this.txtGol.angle = 90;
+				this.txtGol.angle = 0;
 			} else {
-				this.txtGol.angle = -90;
+				this.txtGol.angle = 180;
 			}
 		}
-
 
 
 		public golDoAzul(){
 			this.golsAzul += 1;
-			this.txtGol.tint = 0x0000ff;
-			this.txtGol.setText("GOOOOLLLLL!");
-			this.txtGol.alpha = 1;
+			//this.txtGol.tint = 0x0000ff;
+			//this.txtGol.setText("GOOOOLLLLL!");
+			//this.txtGol.alpha = 1;
 		}
 
 		public golDoVermelho(){
 			this.golsVermelho += 1;
-			this.txtGol.tint = 0xff0000;
-			this.txtGol.setText("GOOOOLLLLL!");
-			this.txtGol.alpha = 1;
+			//this.txtGol.tint = 0xff0000;
+			//this.txtGol.setText("GOOOOLLLLL!");
+			//this.txtGol.alpha = 1;
 		}
 
 		public update(){
-			if (this.txtGol.alpha > 0.5){
-				this.txtGol.alpha -= 0.005;
-			} else {
-				this.txtGol
+			//if (this.txtGol.alpha > 0.5){
+			//	this.txtGol.alpha -= 0.005;
+			//} else {
 				this.txtGol.tint = 0xffffff;
-				this.txtGol.alpha = 0.5;
-				this.txtGol.setText("VML " + this.golsVermelho + ":" + this.golsAzul + " AZL");
-			}
+				this.txtGol.alpha = 1;
+				this.txtGol.setText(this.golsVermelho + " x " + this.golsAzul);
+			//}
 		}
 	}
 }

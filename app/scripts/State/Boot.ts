@@ -1,15 +1,14 @@
 module Pregos.State {
   export class Boot extends Phaser.State {
     preload() {
-      this.load.image('preload-bar', 'assets/images/preload-bar.png');
+      this.load.bitmapFont('carrier_command', 'assets/fonts/berlin.png', 'assets/fonts/berlin.xml');
     }
 
     create() {
-      this.game.stage.backgroundColor = 0x000000;
+        this.game.stage.backgroundColor = 0x036937;
 
-      // Assign global settings here
-      
-      this.game.state.start('preload');
+        // Assign global settings here      
+        this.game.state.start('preload');
     }
   }
 }
